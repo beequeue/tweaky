@@ -1,0 +1,25 @@
+{
+  "jtweak": {
+    "ops": [
+      {
+        "name": "default",
+        "transforms": [{
+          "age": 25,
+          "home": "Alderon"
+        }]
+      }
+    ]
+  },
+
+  "input": {
+    "name": "Anakin Skywalker",
+    "age": 18,
+    "home": "Tatooine"
+  },
+
+  "expected": {
+    "name": "Anakin Skywalker",
+    "age": 25,
+    "home": "Alderon"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "beequeue/tweaky",
+  "description": "A library for transforming JSON data",
+  "require-dev": {
+    "phpunit/phpunit": "^5.2"
+  },
+  "authors": [
+    {
+      "name": "Brendan Quigley",
+      "email": "brendan@beequeue.co.uk"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Beequeue\\Tweaky\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Beequeue\\Test\\Tweaky\\": "tests/unit/"
+    }
+  }
+}
