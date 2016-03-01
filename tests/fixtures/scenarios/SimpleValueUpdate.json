@@ -1,13 +1,8 @@
 {
   "tweaky": {
-    "ops": [
-      {
-        "name": "default",
-        "transforms": [{
-          "age": 25
-        }]
-      }
-    ]
+    "transforms": [{
+      "age": 25
+    }]
   },
 
   "input": {

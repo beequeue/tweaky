@@ -1,14 +1,9 @@
 {
-  "jtweak": {
-    "ops": [
-      {
-        "name": "default",
-        "transforms": [{
-          "age": 25,
-          "home": "Alderon"
-        }]
-      }
-    ]
+  "tweaky": {
+    "transforms": [{
+      "age": 25,
+      "home": "Alderon"
+    }]
   },
 
   "input": {

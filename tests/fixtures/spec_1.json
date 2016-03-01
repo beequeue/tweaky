@@ -1,0 +1,9 @@
+{
+  "name": "spec_1",
+  "transforms": [{
+    "key1": "val1",
+    "key2": {
+      "subkey1": "val2"
+    }
+  }]
+}
