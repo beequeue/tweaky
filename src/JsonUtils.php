@@ -9,8 +9,12 @@ class JsonUtils
      *
      * @link http://php.net/manual/en/function.json-decode.php#112735
      */
-    static function clean_decode($json, $assoc = false, $depth = 512, $options = 0)
-    {
+    public static function cleanDecode(
+        $json,
+        $assoc = false,
+        $depth = 512,
+        $options = 0
+    ) {
         // search and remove comments like /* */ and //
         $json = preg_replace(
             "#(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|([\s\t]//.*)|(^//.*)#",

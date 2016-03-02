@@ -3,10 +3,16 @@
          xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
          colors="true">
 
-    <testsuites>
-        <testsuite name="beequeue/tweaky Unit Tests">
-            <directory>./tests/unit</directory>
-        </testsuite>
-    </testsuites>
+  <testsuites>
+    <testsuite name="beequeue/tweaky Unit Tests">
+       <directory>./tests/unit</directory>
+    </testsuite>
+  </testsuites>
+
+  <filter>
+    <whitelist>
+      <directory suffix=".php">src</directory>
+    </whitelist>
+  </filter>
 
 </phpunit>

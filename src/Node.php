@@ -13,7 +13,7 @@ class Node
 
     protected $childNodes = [];
 
-    function __construct(SelectorInterface $selector)
+    public function __construct(SelectorInterface $selector)
     {
         $this->setSelector($selector);
     }

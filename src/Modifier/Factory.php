@@ -4,7 +4,7 @@ namespace Beequeue\Tweaky\Modifier;
 
 class Factory
 {
-    static function create($val)
+    public static function create($val)
     {
         // @todo Other types of modifier
 

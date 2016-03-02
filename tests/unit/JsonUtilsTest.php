@@ -14,7 +14,7 @@ class JsonUtilsTest extends TestCase
                 ' "key2": "val2"  // Line comment' . PHP_EOL .
                 '} /* Comment at end */';
 
-        $decoded = JsonUtils::clean_decode($json, true);
+        $decoded = JsonUtils::cleanDecode($json, true);
 
         $expected = [
             'key1' => 'val1',

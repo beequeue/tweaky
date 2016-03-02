@@ -4,7 +4,7 @@ namespace Beequeue\Tweaky\Selector;
 
 class Factory
 {
-    static function create($key)
+    public static function create($key)
     {
         // @todo Other types of selector
 

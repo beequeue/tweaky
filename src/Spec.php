@@ -13,10 +13,10 @@ class Spec implements SpecInterface
     /** @var array Array of Node[] */
     protected $transforms = [];
 
-    function __construct($spec)
+    public function __construct($spec)
     {
         if (is_string($spec)) {
-            $spec = JsonUtils::clean_decode($spec);
+            $spec = JsonUtils::cleanDecode($spec);
         }
 
         $this->parse($spec);

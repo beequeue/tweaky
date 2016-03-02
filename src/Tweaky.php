@@ -9,7 +9,7 @@ class Tweaky
 {
     protected $spec;
 
-    function __construct(SpecInterface $spec)
+    public function __construct(SpecInterface $spec)
     {
         $this->spec = $spec;
     }

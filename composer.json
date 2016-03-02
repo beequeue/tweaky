@@ -2,7 +2,12 @@
   "name": "beequeue/tweaky",
   "description": "A library for transforming JSON data",
   "require-dev": {
-    "phpunit/phpunit": "^5.2"
+    "phpunit/phpunit": "^5.2",
+    "phpmd/phpmd": "~2.3",
+    "sebastian/phpcpd": "~2.0",
+    "pdepend/pdepend" : "~2.2",
+    "phploc/phploc": "~2.1",
+    "squizlabs/php_codesniffer": "~2.3"
   },
   "authors": [
     {
