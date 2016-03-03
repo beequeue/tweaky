@@ -5,6 +5,9 @@ namespace Beequeue\Tweaky;
 use Beequeue\Tweaky\Selector\Factory as SelectorFactory;
 use Beequeue\Tweaky\Modifier\Factory as ModifierFactory;
 
+/**
+ * A parsed Tweaky spec
+ */
 class Spec implements SpecInterface
 {
     /** @var string */
@@ -13,6 +16,11 @@ class Spec implements SpecInterface
     /** @var array Array of Node[] */
     protected $transforms = [];
 
+    /**
+     * Constructor
+     *
+     * @param string|object $spec The JSON spec to parse
+     */
     public function __construct($spec)
     {
         if (is_string($spec)) {
@@ -22,6 +30,12 @@ class Spec implements SpecInterface
         $this->parse($spec);
     }
 
+    /**
+     * Parse the passed spec
+     *
+     * @param  object $spec
+     * @return null
+     */
     protected function parse($spec)
     {
         if (!empty($spec->transforms)) {
@@ -31,6 +45,12 @@ class Spec implements SpecInterface
         }
     }
 
+    /**
+     * Parse the passed transform JSON objects into transform nodes
+     *
+     * @param  object $t A transform object from within the spec JSON
+     * @return Node[]
+     */
     protected function parseTransform($t)
     {
         $nodes = [];
@@ -66,6 +86,11 @@ class Spec implements SpecInterface
         return $nodes;
     }
 
+    /**
+     * Return the array of transform Node arrays
+     *
+     * @return Node[][]
+     */
     public function getTransforms()
     {
         return $this->transforms;
