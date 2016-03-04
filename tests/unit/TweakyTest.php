@@ -31,7 +31,12 @@ class TweakyTest extends TestCase
      */
     public function testProcess($scenarioFile)
     {
-        $scenario = json_decode(file_get_contents($scenarioFile));
+        $json = file_get_contents($scenarioFile);
+        $scenario = json_decode($json);
+        if (!$scenario) {
+            $error = json_last_error();
+            $this->fail("Parsing scenario JSON failed: " . $error);
+        }
 
         $spec = new TweakySpec($scenario->tweaky);
         $tweaky = new Tweaky($spec);

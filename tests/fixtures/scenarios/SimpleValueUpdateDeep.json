@@ -1,0 +1,40 @@
+{
+  "tweaky": {
+    "transforms": [{
+      "master": {
+        "name": "Ben Kenobi",
+        "master": {
+          "master": {
+            "name": "Darth Tyranus"
+          }
+        }
+      }
+    }]
+  },
+
+  "input": {
+    "name": "Anakin",
+    "master": {
+      "name": "Obi-Wan",
+      "master": {
+        "name": "Qui-Gonn",
+        "master": {
+          "name": "Count Dooku"
+        }
+      }
+    }
+  },
+
+  "expected": {
+    "name": "Anakin",
+    "master": {
+      "name": "Ben Kenobi",
+      "master": {
+        "name": "Qui-Gonn",
+        "master": {
+          "name": "Darth Tyranus"
+        }
+      }
+    }
+  }
+}
