@@ -1,0 +1,25 @@
+{
+  "tweaky": {
+    "transforms": [{
+      "droids": {
+        "{[1]}": {"name": "Artoo-Deetoo"}
+      }
+    }]
+  },
+
+  "input": {
+    "droids": [
+      {"id": "C-3PO", "name": "Threepio"},
+      {"id": "R2-D2", "name": "Artoo"},
+      {"id": "BB-8", "name": "Beebee"}
+    ]
+  },
+
+  "expected": {
+    "droids": [
+      {"id": "C-3PO", "name": "Threepio"},
+      {"id": "R2-D2", "name": "Artoo-Deetoo"},
+      {"id": "BB-8", "name": "Beebee"}
+    ]
+  }
+}

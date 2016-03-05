@@ -49,21 +49,35 @@ class Tweaky
      */
     protected function applyNodes(array $nodes, &$input)
     {
-        if (is_object($input)) {
+        // We're only interested in arrays and objects
+        if (!is_object($input) && !is_array($input)) {
+            return;
+        }
 
-            foreach ($nodes as $node) {
-                foreach ($input as $key => &$val) {
+        // Iterate the current branch of transform nodes
+        foreach ($nodes as $node) {
 
-                    if (!$node->getSelector()->matches($key)) {
-                        continue;
-                    }
+            // Iterate the current input branch.  Due to the nature of
+            // json_decode, $key will either be a string if the branch was an
+            // object in JSON form, or an int if it was an array in JSON form.
+            // The selector will use this distinction when deciding if it's an
+            // array-matching hit or not
 
-                    if ($valueModifier = $node->getValueModifier()) {
-                        $val = $valueModifier->execute($val);
-                    } elseif ($childNodes = $node->getChildNodes()) {
-                        $this->applyNodes($childNodes, $val);
-                    }
+            foreach ($input as $key => &$val) {
+
+                // Should this input be handled by the current transform node?
+                if (!$node->getSelector()->matches($key)) {
+                    continue;
                 }
+
+                // Does this node modify the inputs value or indicate further
+                // traversal to the next branch?
+                if ($valueModifier = $node->getValueModifier()) {
+                    $val = $valueModifier->execute($val);
+                } elseif ($childNodes = $node->getChildNodes()) {
+                    $this->applyNodes($childNodes, $val);
+                }
+
             }
         }
     }
