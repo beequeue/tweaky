@@ -16,13 +16,26 @@ class Spec implements SpecInterface
     /** @var array Array of Node[] */
     protected $transforms = [];
 
+    /** @var Options Tweaky options */
+    protected $options;
+
     /**
      * Constructor
      *
      * @param string|object $spec The JSON spec to parse
+     * @param Options|null  $options Tweaky options.  If not set, defaults will be used
      */
-    public function __construct($spec)
+    public function __construct($spec, $options = null)
     {
+        if (is_null($options)) {
+            $options = new Options();
+        } elseif (!is_a($options, 'Beequeue\Tweaky\Options')) {
+            throw new Exception(
+                '$options passed to Spec must be of type Beequeue\Tweaky\Options'
+            );
+        }
+        $this->options = $options;
+
         if (is_string($spec)) {
             $spec = JsonUtils::cleanDecode($spec);
         }
@@ -62,7 +75,7 @@ class Spec implements SpecInterface
             foreach ($t as $key => $val) {
 
                 // ... determining their selector type
-                $tSelector = SelectorFactory::create($key);
+                $tSelector = SelectorFactory::create($key, $this->options);
                 $node = new Node($tSelector);
 
                 // ... and values
@@ -74,7 +87,7 @@ class Spec implements SpecInterface
                 } else {
 
                     // If not an object, we should apply a value modifier
-                    $valModifier = ModifierFactory::create($val);
+                    $valModifier = ModifierFactory::create($val, $this->options);
                     $node->setValueModifier($valModifier);
 
                 }

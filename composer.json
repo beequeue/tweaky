@@ -10,6 +10,9 @@
     "squizlabs/php_codesniffer": "~2.3",
     "satooshi/php-coveralls": "~1.0"
   },
+  "require": {
+    "zendframework/zend-stdlib": "~3.0"
+  },
   "authors": [
     {
       "name": "Brendan Quigley",
