@@ -30,13 +30,7 @@ class JsonUtils
             $json
         );
 
-        if (version_compare(phpversion(), '5.4.0', '>=')) {
-            $json = json_decode($json, $assoc, $depth, $options);
-        } elseif (version_compare(phpversion(), '5.3.0', '>=')) {
-            $json = json_decode($json, $assoc, $depth);
-        } else {
-            $json = json_decode($json, $assoc);
-        }
+        $json = json_decode($json, $assoc, $depth, $options);
 
         return $json;
     }

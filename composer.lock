@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "46ee743238b2dca4762679adaad13f23",
-    "content-hash": "b54c81445fcddff9a725f45b3bf1726c",
+    "hash": "680c164a0af6a010256ba12d54bd77ae",
+    "content-hash": "1b2488519b5e941eed338fc41b8481c9",
     "packages": [
         {
             "name": "zendframework/zend-stdlib",
@@ -347,16 +347,16 @@
         },
         {
             "name": "phpmd/phpmd",
-            "version": "2.3.2",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmd/phpmd.git",
-                "reference": "08b5bcd454a7148579b68931fc500d824afd3bb5"
+                "reference": "1ce4c586f4071d27a82421e56ae0e9864c89094d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/08b5bcd454a7148579b68931fc500d824afd3bb5",
-                "reference": "08b5bcd454a7148579b68931fc500d824afd3bb5",
+                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/1ce4c586f4071d27a82421e56ae0e9864c89094d",
+                "reference": "1ce4c586f4071d27a82421e56ae0e9864c89094d",
                 "shasum": ""
             },
             "require": {
@@ -385,7 +385,7 @@
                     "name": "Manuel Pichler",
                     "email": "github@manuel-pichler.de",
                     "homepage": "https://github.com/manuelpichler",
-                    "role": "Project founder"
+                    "role": "Project Founder"
                 },
                 {
                     "name": "Other contributors",
@@ -408,7 +408,7 @@
                 "phpmd",
                 "pmd"
             ],
-            "time": "2015-09-24 14:37:49"
+            "time": "2016-03-08 21:43:36"
         },
         {
             "name": "phpspec/prophecy",
@@ -2052,6 +2052,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.5"
+    },
     "platform-dev": []
 }
