@@ -18,11 +18,30 @@ class Factory
      */
     public static function create($val, Options $options)
     {
-        // @todo Other types of modifier
+        $oTag = preg_quote($options->openingTag);
+        $cTag = preg_quote($options->closingTag);
+
+        // Does this look like an expression of some sort?
+        if (preg_match('/^'.$oTag.'(.*)'.$cTag.'$/', $val, $matches)) {
+            $expression = $matches[1];
+
+            $modifiers = [
+                'Beequeue\Tweaky\Modifier\SimpleNumeric'
+            ];
+
+            foreach ($modifiers as $m) {
+                $result = call_user_func([$m, 'isValid'], $expression);
+                if ($result === false) {
+                    continue;
+                }
+
+                $modifier = new $m($expression);
+                return $modifier;
+            }
+        }
 
         // Last resort, just do a straight replace
         $modifier = new SimpleReplace($val);
-
         return $modifier;
     }
 }

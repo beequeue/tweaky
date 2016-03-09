@@ -2,6 +2,8 @@
 
 namespace Beequeue\Tweaky\Selector;
 
+use Beequeue\Tweaky\Exception;
+
 /**
  * A selector that matches by array index, i.e. integer
  *
@@ -52,7 +54,7 @@ class ByArrayIndex implements SelectorInterface
     {
         // Check for the [ and ] from either side of the specifiers
         if (!preg_match('/^\[(.*)\]$/', $indexValue, $matches)) {
-            return;
+            throw new Exception('Invalid $indexValue in constructor');
         }
 
         $specifiers = explode(',', $matches[1]);

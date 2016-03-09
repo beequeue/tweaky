@@ -30,4 +30,15 @@ class SimpleReplace implements ModifierInterface
     {
         return $this->value;
     }
+
+    /**
+     * Determine if the passed expression is valid for the modifier
+     *
+     * @param  string $expression The expression to test
+     * @return bool Always returns true
+     */
+    public static function isValid($expression)
+    {
+        return true;
+    }
 }

@@ -14,4 +14,12 @@ interface ModifierInterface
      * @return mixed
      */
     public function execute($input);
+
+    /**
+     * Determine if the passed expression is valid for the modifier
+     *
+     * @param  string $expression The expression to test
+     * @return bool True if the expression can be handled by the modifeer, otherwise false
+     */
+    public static function isValid($expression);
 }
