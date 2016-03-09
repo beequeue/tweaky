@@ -33,12 +33,14 @@ class SimpleNumeric implements ModifierInterface
     /** @var mixed The value to use with the operator */
     protected $value;
 
-    /** @var string The regex used to match suitable expressions */
-    const REGEX = '/^'
-        . '([*+-\/])'                      // an operator
-        . '\s*'                           // followed by optional space
-        . '([+-]?(?:(?:\d+(?:\.\d*)?)|(?:\.\d+)))' // followed by a number
-        . '$/';
+    /**
+     * The regex used to match suitable expressions
+     *
+     * Basically an operator followed by optional whitespace, followed by a number
+     *
+     * @var string
+     */
+    const REGEX = '/^([*+-\/])\s*([+-]?(?:(?:\d+(?:\.\d*)?)|(?:\.\d+)))$/';
 
     /**
      * Constructor
