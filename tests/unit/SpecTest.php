@@ -15,4 +15,13 @@ class SpecTest extends TestCase
 
         // @todo add assertions
     }
+
+    /**
+     * @expectedException Beequeue\Tweaky\Exception
+     */
+    public function testConstructorThrowsOnInvalidJson()
+    {
+        $val = "I'm not JSON!";
+        $spec = new TweakySpec($val);
+    }
 }

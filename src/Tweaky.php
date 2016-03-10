@@ -31,6 +31,14 @@ class Tweaky
      */
     public function process($input)
     {
+        if (!is_object($input)) {
+            $input = JsonUtils::cleanDecode($input);
+            if (!$input) {
+                throw new Exception(
+                    '$input is not valid JSON'
+                );
+            }
+        }
         $processed = $input;
 
         foreach ($this->spec->getTransforms() as $nodes) {

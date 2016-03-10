@@ -38,6 +38,11 @@ class Spec implements SpecInterface
 
         if (is_string($spec)) {
             $spec = JsonUtils::cleanDecode($spec);
+            if (!$spec) {
+                throw new Exception(
+                    '$spec passed to Spec is not valid JSON'
+                );
+            }
         }
 
         $this->parse($spec);
