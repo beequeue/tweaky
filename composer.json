@@ -1,6 +1,9 @@
 {
   "name": "beequeue/tweaky",
+  "type": "library",
   "description": "A library for transforming JSON data",
+  "keywords": ["JSON", "transformation", "mock"],
+  "license": "MIT",
   "require-dev": {
     "phpunit/phpunit": "~4.8",
     "phpmd/phpmd": "~2.3",
