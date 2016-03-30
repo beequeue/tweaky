@@ -87,6 +87,8 @@ class ByArrayIndex implements SelectorInterface
         if (preg_match('/^(\d+)-(\d+)$/', $specifier, $matches)) {
             return [intval($matches[1]), intval($matches[2])];
         }
+
+        throw new Exception(sprintf('Invalid specifier: %s', $specifier));
     }
 
     /**

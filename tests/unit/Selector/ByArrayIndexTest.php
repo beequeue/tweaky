@@ -65,4 +65,22 @@ class ByArrayIndexTest extends TestCase
         $selector = new ByArrayIndex($selectorVal);
         $this->assertSame($isMatch, $selector->matches($testVal));
     }
+
+    /**
+     * @expectedException Beequeue\Tweaky\Exception
+     */
+    public function testConstructorThrowsOnInvalidIndexValue()
+    {
+        $selectorVal = "I don't start with [ and end with ].";
+        $selector = new ByArrayIndex($selectorVal);
+    }
+
+    /**
+     * @expectedException Beequeue\Tweaky\Exception
+     */
+    public function testParseSpecifierThrowsOnInvalidSpecifier()
+    {
+        $selectorVal = "[not-valid]";
+        $selector = new ByArrayIndex($selectorVal);
+    }
 }

@@ -12,7 +12,7 @@ class Factory
     /**
      * Generate an appropriate modifier based on the Tweaky value string
      *
-     * @param  string $value The Tweaky value string
+     * @param  string $val The Tweaky value string
      * @param  Options $options Tweaky options
      * @return ModifierInterface The generated modifier object
      */

@@ -24,4 +24,14 @@ class SpecTest extends TestCase
         $val = "I'm not JSON!";
         $spec = new TweakySpec($val);
     }
+
+    /**
+     * @expectedException Beequeue\Tweaky\Exception
+     */
+    public function testConstructorThrowsOnInvalidOptions()
+    {
+        $val = '{"valid_json":true}';
+        $invalidOptions = "I'm not an Beequeue\Tweaky\Options object!";
+        $spec = new TweakySpec($val, $invalidOptions);
+    }
 }

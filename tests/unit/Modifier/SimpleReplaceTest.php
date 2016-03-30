@@ -15,4 +15,12 @@ class SimpleReplaceTest extends TestCase
         $result = $modifier->execute("old value");
         $this->assertSame($newValue, $result);
     }
+
+    public function testIsValid()
+    {
+        // Should always return true
+        $this->assertTrue(SimpleReplace::isValid('val'));
+        $this->assertTrue(SimpleReplace::isValid(0));
+        $this->assertTrue(SimpleReplace::isValid(null));
+    }
 }

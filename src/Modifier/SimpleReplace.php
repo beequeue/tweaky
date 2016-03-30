@@ -34,7 +34,7 @@ class SimpleReplace implements ModifierInterface
     /**
      * Determine if the passed expression is valid for the modifier
      *
-     * @param  string $expression The expression to test
+     * @param  mixed $expression The expression to test
      * @return bool Always returns true
      */
     public static function isValid($expression)
